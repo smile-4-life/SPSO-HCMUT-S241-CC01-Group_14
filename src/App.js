@@ -1,7 +1,16 @@
-export default function App() {
+import { Route, Routes } from "react-router-dom";
+import UserRoute from "./routes/user";
+import LoginPage from "./pages/LoginPage";
+
+function App() {
   return (
-    <h1 className="text-3xl font-bold">
-      Hello world!
-    </h1>
+    <>
+      <Routes>
+        <Route path="*" element={<LoginPage />} />
+        <Route path="/user/*" element={<UserRoute />} />
+      </Routes>
+    </>
   )
 }
+
+export default App
