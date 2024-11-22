@@ -17,7 +17,9 @@
 ## 1. Domain Context
 
 Known as one of the schools with the most hard course programs in the country, Ho Chi Minh Bach Khoa university requires high effort from students to graduate. One of the special aspects from Bach Khoa university is the huge resource of documents that students need to study throughout the school time, which stimulates the need for printing of the student. On the grounds of that, printing service in the campus of the school rises as an amazing and very practical service for supporting the student’s study. However, with the enormous demand from a big number of students, it is essential for having a software program that can provide services efficiently for students as well as make the management from the school easier.
+
 This system will control everything students need related to documents printed via printer, including their printing registration, printing history and payment method. In terms of SPS Officers - manager of printers, they can handle the printing related information such as permitted file type, any trouble of the printers and the printing history of every student.
+
 There are 3 stakeholders:
 + Students: the user of the system, must be able to upload and print files, access their printing record and conduct transactions.
 + SPS Officer: manage the physical printer and student’s activities, be able to read monthly and annually reports, as well as all student’s records and information;
