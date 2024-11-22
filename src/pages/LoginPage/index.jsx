@@ -29,7 +29,7 @@ const LoginPage = () => {
                             <p className="text-black font-normal text-sm">HCMUT (HCMUT account)</p>
                         </NavLink>
                         <NavLink className="w-full py-3 flex items-center justify-center rounded-lg border border-[#DDDDDD]"
-                            to="/admin"
+                            to="/admin/manage_system"
                         >
                             <p className="text-black font-normal text-sm">Admin </p>
                         </NavLink>

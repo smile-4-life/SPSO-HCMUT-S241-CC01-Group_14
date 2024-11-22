@@ -1,7 +1,7 @@
 import React from "react";
 import side_bar_image from "../assets/images/hcmut_school_gate.png"
 import { ReactComponent as SpsoLogo } from "../assets/svgs/spso_name.svg"
-import SideBarLink from "../components/SideBarLink";
+import SideBarLink from "./SideBarLink";
 import { ReactComponent as PersonalSvg } from "../assets/svgs/personal_icon.svg";
 import { ReactComponent as PlusRectangleSvg } from "../assets/svgs/plus-rectangle.svg";
 import { ReactComponent as PrinterSvg } from "../assets/svgs/printer.svg";
@@ -16,7 +16,7 @@ const Sidebar = () => {
             backgroundImage: `url(${side_bar_image})`,
         }}
     >
-      <a href="/">
+      <a href="student_information">
         <SpsoLogo className="w-48 h-auto mb-6" />
       </a>
       <ul className="flex flex-col w-full items-left">
