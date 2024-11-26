@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 const LoginPage = () => {
     return (
-        <div className="flex-1 h-full ">
+        <div className="flex-1 h-screen">
             <div className="flex w-full bg-blue px-4 justify-start">
                 <img src={HCMUTLogo} alt="HCMUT_official_logo" className="w-28 h-20"/>
             </div>
