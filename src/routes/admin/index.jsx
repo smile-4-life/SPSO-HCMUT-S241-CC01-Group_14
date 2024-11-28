@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom"
 import Adminsidebar from "../../components/AdminSidebar"
 import { Suspense, lazy } from "react"
 
+const AdminPersonalInformationPage = lazy(() => import("../../pages/admin/PersonalInformation"))
 const SystemManagementPage = lazy(() => import("../../pages/admin/SystemManagement"))
 const PrintingHistoryPage = lazy(() => import("../../pages/admin/PrintingHistory"))
 const MaintenancePage = lazy(() => import("../../pages/admin/MaintenanceSchedule"))
@@ -19,14 +20,26 @@ const AdminRoute = () => {
                         </Suspense>
                     }
                 />
-                <Route 
+                <Route
                     path="printing_history"
-                    element={
-                        <Suspense>
-                            <PrintingHistoryPage />
-                        </Suspense>
-                    }
-                />
+                >
+                    <Route 
+                        path=""   
+                        element={
+                            <Suspense>
+                                <PrintingHistoryPage />
+                            </Suspense>
+                        }
+                        />
+                    <Route 
+                        path="student"
+                        element={
+                            <Suspense>
+                                <AdminPersonalInformationPage />
+                            </Suspense>
+                        }
+                    />
+                </Route>
                 
                 <Route 
                     path="maintenance_scheduling"
