@@ -16,16 +16,17 @@ const LoginPage = () => {
                 }}
             >
                 <div className="w-[540px] flex flex-col items-center space-y-8 justify-center p-14 bg-white rounded-lg">
-                    <p className="text-3xl text-blue-dark font-extrabold">SMART PRINTING SERVICE</p>
+                    <p className="text-3xl text-blue-dark font-bold">SMART PRINTING SERVICE</p>
                     <img src={HCMUTImage} alt="HCMUT_official_logo" className="w-36 h-36"/>
                     <div className="bg-gray h-[1px] w-full"/>
                     <div className="w-full flex justify-start">
                         <p className="text-2xl font-bold text-[#002799]">Log in using your account on:</p>
                     </div>
                     <div className="w-full flex flex-col space-y-[6px]">
-                        <NavLink className="w-full py-3 flex items-center justify-center rounded-lg border border-[#DDDDDD]"
+                        <NavLink className="flex flex-row space-x-4 w-full py-3 items-center justify-center rounded-lg border border-[#DDDDDD]"
                             to="/user/student_information"
                         >
+                            <img src={HCMUTImage} alt="HCMUT_logo_login" className="w-7 h-7"/>
                             <p className="text-black font-normal text-sm">HCMUT (HCMUT account)</p>
                         </NavLink>
                         <NavLink className="w-full py-3 flex items-center justify-center rounded-lg border border-[#DDDDDD]"
