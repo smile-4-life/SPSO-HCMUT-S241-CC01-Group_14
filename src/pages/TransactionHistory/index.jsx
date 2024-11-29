@@ -46,6 +46,7 @@ const TransactionHistoryPage = () => {
   const totalTransactions = transactionData.length;
 
   return (
+    <div style={{ width: '80%', height: '80%' }}>
     <div className="flex flex-col space-y-5 bg-gray-100 p-6 w-full">
       {/* Main Content */}
       <div className="flex-1 bg-gray-100 p-6">
@@ -57,14 +58,14 @@ const TransactionHistoryPage = () => {
           <div className="flex flex-row items-center bg-white p-4 rounded-md shadow-xl w-2/5">
             <div className="flex flex-col items-end flex-grow">
               <div className="text-blue font-bold text-xl mb-3">Number of A4</div>
-              <div className="text-gray-600 text-3xl font-bold">{totalA4Papers}</div>
+              <div className="text-gray-600 text-2xl font-bold">{totalA4Papers}</div>
             </div>
           </div>
           {/* Total Transactions */}
           <div className="flex flex-row items-center bg-white p-4 rounded-md shadow-xl w-2/5">
             <div className="flex flex-col items-end flex-grow">
               <div className="text-blue font-bold text-xl mb-3">Number of transactions</div>
-              <div className="text-gray-600 text-3xl font-bold">{totalTransactions}</div>
+              <div className="text-gray-600 text-2xl font-bold">{totalTransactions}</div>
             </div>
           </div>
         </div>
@@ -92,6 +93,7 @@ const TransactionHistoryPage = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

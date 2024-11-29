@@ -5,7 +5,7 @@ import PriceDisplay from "./PriceDisplay";
 const PaperOption = ({ quantity, price, optionKey, onSelect }) => {
   return (
     <div
-      className="flex flex-wrap gap-5 justify-between mt-6 w-full text-3xl font-medium text-black max-md:mr-1 max-md:max-w-full"
+      className="flex flex-wrap gap-5 justify-between mt-6 w-full text-2xl font-medium text-black max-md:mr-1 max-md:max-w-full"
       onClick={onSelect}
     >
       <div className="flex gap-5 items-center">

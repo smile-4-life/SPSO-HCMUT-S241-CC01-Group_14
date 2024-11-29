@@ -39,11 +39,12 @@ const handleQuantityChange = (event) => {
   };
   
   return (
+    <div style={{ width: '80%', height: '80%' }}>
     <div className="flex flex-col space-y-5 bg-gray-100 p-6 w-full">
       <Header pageName="Buy More Page" description="Buy and pay for pages." />
       <main className="flex flex-col justify-center items-start px-36 py-16 w-full bg-white rounded-3xl max-md:px-5 max-md:max-w-full">
         <section className="flex flex-col w-full max-w-[1030px] max-md:max-w-full">
-          <h1 className="self-center ml-11 text-6xl font-medium text-cyan-600 max-md:max-w-full max-md:text-4xl">
+          <h1 className="self-center ml-11 text-5xl font-medium text-cyan-600 max-md:max-w-full max-md:text-5xl">
             Buy more A4 papers
           </h1>
           <div className="flex flex-wrap gap-5 justify-between mt-14 w-full max-md:mt-10 max-md:mr-1 max-md:max-w-full">
@@ -56,7 +57,7 @@ const handleQuantityChange = (event) => {
                   id="customAmount"
                   value={customQuantity}
                   onChange={handleQuantityChange}
-                  className="text-3xl font-medium text-black w-20"
+                  className="text-2xl font-medium text-black w-20"
                 />
               </div>
             </div>
@@ -76,6 +77,7 @@ const handleQuantityChange = (event) => {
           <PaymentButton onClick={handleSendOption} />
         </section>
       </main>
+    </div>
     </div>
   );
 };
