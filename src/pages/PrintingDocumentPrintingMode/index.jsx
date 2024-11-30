@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Header from "../../components/Header";
+import PDFViewing from "../../assets/images/PDF_Viewing.png"
+import PDFFile from "../../assets/images/W5_RelationalAlgebra.pdf"
 import WaitingItem from "../../components/WaitingItem";
 import { formatDateTime } from "../../utils/functions"
 
@@ -23,25 +25,28 @@ const PrintDocumentPage = () => {
       {/* Header */}
       <Header pageName="Print Document" description="Uploaded document for printing."/>
       {/* Main Content */}
-      <div className="flex flex-1 flex-row space-x-4 p-4 overflow-y-auto">
+      <div className="flex h-full space-x-4 rounded-lg justify-start overflow">
         {/* File Preview Section */}
-        <div className="flex flex-col w-3/5 bg-white p-4 rounded-md shadow-md">
-          <h2 className="font-bold text-lg">Xem trước tài liệu</h2>
-          <img
-            src="D:\AssCNPM\SPSO-HCMUT-S241-CC01-Group_14\src\assets\images\PDF_Viewing.png" // Replace with actual PNG file path
-            alt="Document preview"
-            className="h-full w-full mt-4 rounded-md"
-          />
+        <div className="flex flex-col w-3/5 bg-white p-4 rounded-md shadow-md overflow-hidden relative">
+          <h2 className="text-blue font-bold text-xl ">Xem trước tài liệu</h2>
+          <p className="font-bold text-black text-sm">Capstone_Project_Autumn_2023.pdf</p>
+          <div className="relative w-full h-[80vh] overflow-auto bg-gray-100">
+            <embed
+              src={PDFFile}
+              alt="Document preview"
+              className="h-full w-full mt-4 rounded-md object-contain"
+            />
+          </div>
         </div>
 
         {/* File Attributes and Printing Details */}
         <div className="flex flex-col w-2/5 space-y-4">
           {/* File Attributes */}
           <div className="bg-white p-4 rounded-md shadow-md">
-            <h2 className="text-blue font-bold text-xl">File Atrributes</h2>
-            <p className="font-normal text-gray-dark text-sm">File name: Capstone_Project_Autumn_2023.pdf</p>
-            <p className="font-normal text-gray-dark text-sm">Size: 40.2 KB</p>
-            <p className="font-normal text-gray-dark text-sm">Number of Pages: 6</p>
+            <h2 className="text-blue font-bold text-xl">File Attributes</h2>
+            <p className="font-bold text-black text-sm"><span>File name:</span> <span className="font-normal text-gray-dark text-sm">Capstone_Project_Autumn_2023.pdf</span></p>
+            <p className="font-bold text-black text-sm"><span>Size:</span> <span className="font-normal text-gray-dark text-sm">40.2 KB</span></p>
+            <p className="font-bold text-black text-sm"><span>Number of Pages:</span> <span className="font-normal text-gray-dark text-sm">6</span></p>
           </div>
 
           {/* Printing Info */}
