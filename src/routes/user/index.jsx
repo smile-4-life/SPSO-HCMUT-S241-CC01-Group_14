@@ -4,6 +4,7 @@ import { Suspense, lazy } from "react"
 
 const MainPage = lazy(() => import("../../pages/PersonalInformation"))
 const PrintPage = lazy(() => import("../../pages/PrintDocument"))
+const PrintPagePrintingMode = lazy(() => import("../../pages/PrintingDocumentPrintingMode"));
 const TransactionPage = lazy(() => import("../../pages/TransactionHistory"))
 const BuyPage = lazy(() => import("../../pages/BuyMorePage"))
 
@@ -27,6 +28,15 @@ const UserRoute = () => {
                             <PrintPage />
                         </Suspense>
                     }
+                />
+                    {/* New Route for Printing Mode */}
+                <Route 
+                path="print_document/printing_mode"
+                element={
+                    <Suspense>
+                        <PrintPagePrintingMode />
+                    </Suspense>
+                }
                 />
                 
                 <Route 
