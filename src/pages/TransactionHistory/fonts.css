@@ -1,0 +1,71 @@
+/* fonts.css */
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../../assets/fonts/BalooChettan2-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.customFont {
+    font-family: 'CustomFont', sans-serif;
+  }
+  .transaction-history {
+    border-radius: 0;
+    font-family: Plus Jakarta Sans, sans-serif;
+  }
+  .transaction-card {
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    padding: 20px 428px;
+  }
+  .transaction-details {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .transaction-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .transaction-timestamp {
+    color: #808080;
+    font: 400 18px Plus Jakarta Sans, sans-serif;
+    margin-right: 40px;
+  }
+  .transaction-description {
+    color: #000;
+    font: 700 24px Plus Jakarta Sans, sans-serif;
+    margin-top: 26px;
+  }
+  .transaction-amount {
+    color: #26273A;
+    font: 800 24px Plus Jakarta Sans, sans-serif;
+    text-align: right;
+    margin-top: 51px;
+  }
+  .transaction-id-label {
+    color: rgba(38, 39, 58, 0.6);
+    margin: 4px 0 0 52px;
+    font: 400 12px Proxima Nova, sans-serif;
+  }
+  .transaction-id-value {
+    color: #26273A;
+    font: 400 12px Plus Jakarta Sans, sans-serif;
+    margin: 6px 0 0 52px;
+  }
+  @media (max-width: 991px) {
+    .transaction-card {
+      padding: 0 20px;
+    }
+    .transaction-amount {
+      margin-top: 40px;
+    }
+    .transaction-id-label,
+    .transaction-id-value {
+      margin-left: 10px;
+    }
+  }
