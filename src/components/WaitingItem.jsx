@@ -3,7 +3,8 @@ import { ReactComponent as PrinterSvg } from "../assets/svgs/printer.svg";
 import { ReactComponent as CopySvg } from "../assets/svgs/copy.svg";
 import { ReactComponent as HistorySvg} from "../assets/svgs/history.svg"
 
-const WaitingItem = ({ registerTime, docName, page, place, copies, isPrinted, waitingTime, printedTime }) => {
+const WaitingItem = ({ registerTime, docName, page, place, copies, isPrinted, 
+        waitingTime, printedTime, onButtonClick }) => {
     return (
         <div className="flex flex-col w-full space-y-2 items-start p-3 rounded-lg drop-shadow bg-white">
             <p className="font-normal text-gray-dark text-sm">{registerTime}</p>
@@ -31,7 +32,7 @@ const WaitingItem = ({ registerTime, docName, page, place, copies, isPrinted, wa
                     </div>
                     <div className="flex flex-row justify-between items-center">
                         <p/>
-                        <button className="px-4 py-2 rounded-lg bg-[#64FFA2] bg-opacity-50 items-end">
+                        <button className="px-4 py-2 rounded-lg bg-[#64FFA2] bg-opacity-50 items-end" onClick={onButtonClick}>
                             <p className="font-semibold text-[#07C656]">Confirm</p>
                         </button>
                     </div>
@@ -45,7 +46,7 @@ const WaitingItem = ({ registerTime, docName, page, place, copies, isPrinted, wa
                     </div>
                     <div className="flex flex-row justify-between items-center">
                         <p/>
-                        <button className="px-5 py-2 rounded-lg bg-[#FD7D7D] bg-opacity-50 items-end">
+                        <button className="px-5 py-2 rounded-lg bg-[#FD7D7D] bg-opacity-50 items-end" onClick={onButtonClick}>
                             <p className="font-semibold text-[#F40F0F]">Cancel</p>
                         </button>
                     </div>
