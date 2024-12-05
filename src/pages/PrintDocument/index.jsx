@@ -4,9 +4,11 @@ import { ReactComponent as UploadSvg } from "../../assets/svgs/upload.svg"
 import { formatDateTime } from "../../utils/functions"
 import PrintingHistoryItem from "../../components/PrintingHistoryItem"
 import WaitingItem from "../../components/WaitingItem";
+import { useNavigate } from "react-router-dom";
 
 const PrintDocumentPage = () => {
   const fileInputRef = useRef(null);;
+  const navigate = useNavigate();
   const allowedFormats = ["pdf", "ppt", "pptx", "doc", "docx", "image", "png", "jpeg", "jpg", "txt"];
 
   const printedFiles = [
@@ -174,6 +176,8 @@ const PrintDocumentPage = () => {
     if (isAllowedFormat(file.name)) {
       alert("Uploaded file " + file.name);
       console.log(file);
+      
+      navigate("printing_mode");
     } else {
       alert("File not supported");
     }

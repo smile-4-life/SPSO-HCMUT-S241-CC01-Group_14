@@ -10,8 +10,16 @@ const PrintDocumentPage = () => {
   const [selectedPageSize, setSelectedPageSize] = useState("A4");
   const [ChooseSide, setChooseSide] = useState("1")
   const [selectedCopies, setSelectedCopies] = useState(1);
-  const [selectedPrinter, setSelectedPrinter] = useState("B4-01");
-
+  const [selectedBuilding, setSelectedBuilding] = useState("");
+  const [selectedPrinter, setSelectedPrinter] = useState("");
+  const buildingToPrinterMapping = {
+    C04: ["C4-01", "C4-02", "C4-03", "C4-04", "C4-05"],
+    C05: ["B5-01", "B5-02", "B5-03"],
+    C06: ["B6-01", "B6-02"],
+    A04: ["A4-01", "A4-02"],
+    B04: ["B4-01", "B4-02", "B4-03", "B4-04", "B4-05"],
+  };
+  const filteredPrinters = buildingToPrinterMapping[selectedBuilding] || [];
   const handlePrint = () => {
     console.log("Printing with settings:", {
       pageRange: selectedPageRange,
@@ -41,7 +49,7 @@ const PrintDocumentPage = () => {
         </div>
 
         {/* File Attributes and Printing Details */}
-        <div className="flex flex-col gap-2 h-[100vh] w-2/5 h-full space-y-4">
+        <div className="flex flex-col gap-2 h-[100vh] w-2/5 h-full space-y-2">
           {/* File Attributes */}
           <div className="bg-white p-4 rounded-md shadow-md">
             <h2 className="text-blue font-bold text-xl">File Attributes</h2>
@@ -144,21 +152,49 @@ const PrintDocumentPage = () => {
             {/* Printer Selection */}
             <div className="bg-white p-4 rounded-md shadow-md">
               <h2 className="text-blue font-bold text-xl ">Chọn máy in</h2>
-              <div className="grid grid-cols-3 gap-2 mt-4">
-                {["B4-01", "B4-02", "B4-03", "B4-04", "B4-05"].map((printer) => (
-                  <button
-                    key={printer}
-                    className={`px-4 py-2 text-sm rounded-md ${
-                      selectedPrinter === printer
-                        ? "bg-blue-500 text-white"
-                        : "bg-gray-200 text-gray-700"
-                    }`}
-                    onClick={() => setSelectedPrinter(printer)}
-                  >
-                    {printer}
-                  </button>
-                ))}
+              <div className="flex items-center space-x-2">
+                <h2 className="font-bold text-lg">Chọn khu vực</h2>
+                <span></span>
+                <select
+                  value={selectedBuilding}
+                  onChange={(e) => setSelectedBuilding(e.target.value)}
+                  className="w-48 p-1 border rounded-md"
+                >
+                  {Object.keys(buildingToPrinterMapping).map((building) => (
+                    <option key={building} value={building}>
+                      {building}
+                    </option>
+                  ))}
+                </select>
               </div>
+              {/* Buttons for Printer Selection */}
+              <div className="grid grid-cols-3 gap-2 mt-4">
+                  {filteredPrinters.map((printer) => (
+                    <button
+                      key={printer}
+                      className={`px-4 py-2 text-sm rounded-md ${
+                        selectedPrinter === printer
+                          ? "bg-blue-500 text-white"
+                          : "bg-gray-200 text-gray-700"
+                      }`}
+                      onClick={() => setSelectedPrinter(printer)}
+                    >
+                      {printer}
+                    </button>
+                  ))}
+                </div>
+              {/* Display Selected Values */}
+              <div className="mt-4">
+                <p>
+                  <strong>Selected Building:</strong> {selectedBuilding}
+                </p>
+                <p>
+                  <strong>Selected Printer:</strong> {selectedPrinter}
+                </p>
+              </div>
+              
+              
+              
             </div>
 
             {/* Print Action */}
